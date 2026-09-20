@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=DM+Sans:wght@400;500;700&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --color-velvet: #2b0a17;
+  --color-velvet-deep: #1a0610;
+  --color-curtain: #4a1428;
+  --color-brass: #e3ab3d;
+  --color-paper: #f5e9d3;
+}
+
+body {
+  background: var(--color-velvet-deep);
+  color: var(--color-paper);
+  font-family: var(--font-sans);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-brass);
+  outline-offset: 3px;
+}
+
+@keyframes modal-in {
+  from { opacity: 0; transform: translateY(12px) scale(0.98); }
+  to   { opacity: 1; transform: none; }
+}
+.modal-in { animation: modal-in 0.2s ease-out; }
+
+@media (prefers-reduced-motion: reduce) {
+  .modal-in { animation: none; }
+}
